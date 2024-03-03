@@ -1,6 +1,14 @@
 /*
+
 !/config
 !/defaultconfigs
 !/kubejs
 !/.gitignore
 !/manifest.json
+
+/config/fml.toml
+/kubejs/probe
+config/forge-client.toml
+config/ae2/client.json
+config/ftbbackups2.json
+config/embeddium-fingerprint.json
