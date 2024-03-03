@@ -1,0 +1,90 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "chapter_1"
+	group: "702113C51FDB5A3C"
+	id: "36E1E495CDD39264"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				Count: 1b
+				id: "gtceu:diamond_wrench"
+				tag: {
+					DisallowContainerItem: 0b
+					GT.Behaviours: { }
+					GT.Tool: {
+						Damage: 0
+						HarvestLevel: 3
+						MaxDamage: 767
+						ToolSpeed: 10.0f
+					}
+					HideFlags: 2
+				}
+			}
+			id: "01764405141A15CB"
+			rewards: [{
+				id: "66424003006483B3"
+				item: {
+					Count: 1b
+					id: "gtceu:prospector.hv"
+					tag: {
+						Charge: 1600000L
+					}
+				}
+				type: "item"
+			}]
+			shape: "gear"
+			subtitle: "It all starts here"
+			tasks: [{
+				disable_toast: true
+				id: "430F78B6F7D76759"
+				title: "&6Tick"
+				type: "checkmark"
+			}]
+			title: "&4The First"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["01764405141A15CB"]
+			disable_toast: true
+			id: "5D34EC31749856FB"
+			rewards: [{
+				auto: "enabled"
+				id: "1B74E6C39460C1D7"
+				item: {
+					Count: 1b
+					id: "gtceu:prospector.hv"
+					tag: {
+						Charge: 1600000L
+					}
+				}
+				team_reward: false
+				type: "item"
+			}]
+			subtitle: "recharge your prospector for free anytime"
+			tasks: [
+				{
+					id: "1CDB0455C68DCB69"
+					type: "checkmark"
+				}
+				{
+					consume_items: true
+					disable_toast: true
+					id: "35496D853495B50D"
+					item: "gtceu:prospector.hv"
+					match_nbt: false
+					only_from_crafting: false
+					type: "item"
+				}
+			]
+			title: "Recharge prospector"
+			x: -1.5d
+			y: -1.5d
+		}
+	]
+	title: "Chapter: 1"
+}
