@@ -3,6 +3,7 @@ ServerEvents.recipes(event => {
 
     //Recipe ID
     const recipes_id = [
+        //gtceu
         'gtceu:smelting/wrought_iron_nugget'
     ];
 
