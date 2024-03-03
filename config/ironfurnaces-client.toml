@@ -73,6 +73,10 @@
 	# Default: 10
 	#Range: 1 ~ 100
 	recipe_cache = 10
+	# The capacity of the has_recipe cache, higher values use more memory.
+	# Default: 200
+	#Range: 1 ~ 1000
+	has_recipe_cache = 200
 
 	[furnaces.iron_furnace]
 		# How much RF to generate per tick
