@@ -14,4 +14,5 @@ ServerEvents.recipes(event => {
     Encase('ironfurnaces:crystal_furnace','ironfurnaces:diamond_furnace','minecraft:amethyst_shard');
     Encase('ironfurnaces:obsidian_furnace',['ironfurnaces:emerald_furnace','ironfurnaces:crystal_furnace'],'minecraft:obsidian');
     Encase('ironfurnaces:netherite_furnace','ironfurnaces:obsidian_furnace','minecraft:netherite_scrap');
+    
 });
