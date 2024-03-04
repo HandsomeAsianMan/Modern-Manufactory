@@ -12,5 +12,5 @@ config/forge-client.toml
 config/ae2/client.json
 config/ftbbackups2.json
 config/embeddium-fingerprint.json
-config/oculus.properties.json
+config/oculus.properties
 config/xaerominimap_entities.json
