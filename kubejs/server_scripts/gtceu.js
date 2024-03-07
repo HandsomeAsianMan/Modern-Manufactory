@@ -3,31 +3,55 @@ ServerEvents.recipes(event => {
 
     //wrought iron
     event.smelting('gtceu:wrought_iron_ingot','minecraft:iron_ingot');
-    
+
+
+    //greenhouse controller recipe
+    event.shaped('gtceu:greenhouse',
+        [
+            'PCP',
+            'WMW',
+            'PCP'
+        ],{
+            P: 'gtceu:steel_plate',
+            C: '#gtceu:circuits/mv',
+            W: 'gtceu:fine_platinum_wire',
+            M: 'gtceu:solid_machine_casing'
+        });
+
     //greenhouse function
-    function GreenhouseRecipe(output, seed) {
-        if (typeof seed == 'undefined') {seed = output};
-        event.recipes.gtceu.greenhouse(output)
+    function GreenhouseRecipe(recipeID, output, seed, fluid, time, eu) {
+        event.recipes.gtceu.greenhouse(recipeID)
         .notConsumable(seed)
-        .itemOutputs(`16x ${output}`)
-        .inputFluids('minecraft:water 1000')
-        .duration(400)
-        .EUt(64);
+        .itemOutputs(output)
+        .inputFluids(fluid)
+        .duration(time)
+        .EUt(eu);
     };
 
-
-    //List of plants grown without seeds
-    for (let noSeed of [
-        'minecraft:potato','minecraft:carrot','minecraft:sweet_berries','minecraft:vine',
-        'minecraft:glow_berries','minecraft:nether_wart','minecraft:cocoa_beans','minecraft:cactus',
-        'minecraft:kelp','minecraft:bamboo','minecraft:sugar_cane','minecraft:brown_mushroom',
-        'minecraft:sea_pickle','minecraft:lily_pad','minecraft:seagrass','minecraft:red_mushroom'
-        ]) {GreenhouseRecipe(noSeed);};
-    
-    //Plants with seeds
-    GreenhouseRecipe('minecraft:wheat','minecraft:wheat_seeds');
-    GreenhouseRecipe('minecraft:melon','minecraft:melon_seeds');
-    GreenhouseRecipe('minecraft:beetroot','minecraft:beetroot_seeds');
-    GreenhouseRecipe('minecraft:pumpkin','minecraft:pumpkin_seeds');
-    GreenhouseRecipe('minecraft:chorus_fruit','minecraft:chorus_flower');
+    //Array of plants grown with typical greenhouse recipe
+    //['minecraft:template','16x minecraft:template','minecraft:template_seeds'],
+    for (let plant of 
+    [
+        ['minecraft:potato','16x minecraft:potato', 'minecraft:potato'],
+        ['minecraft:carrot','16x minecraft:carrot', 'minecraft:carrot'],
+        ['minecraft:sweet_berries','16x minecraft:sweet_berries', 'minecraft:sweet_berries'],
+        ['minecraft:vine','16x minecraft:vine', 'minecraft:vine'],
+        ['minecraft:glow_berries','16x minecraft:glow_berries', 'minecraft:glow_berries'],
+        ['minecraft:nether_wart','16x minecraft:nether_wart', 'minecraft:nether_wart'],
+        ['minecraft:cocoa_beans','16x minecraft:cocoa_beans', 'minecraft:cocoa_beans'],
+        ['minecraft:cactus','16x minecraft:cactus', 'minecraft:cactus'],
+        ['minecraft:kelp','16x minecraft:kelp', 'minecraft:kelp'],
+        ['minecraft:bamboo','16x minecraft:bamboo', 'minecraft:bamboo'],
+        ['minecraft:sugar_cane','16x minecraft:sugar_cane', 'minecraft:sugar_cane'],
+        ['minecraft:brown_mushroom','16x minecraft:brown_mushroom', 'minecraft:brown_mushroom'],
+        ['minecraft:sea_pickle','16x minecraft:sea_pickle', 'minecraft:sea_pickle'],
+        ['minecraft:lily_pad','16x minecraft:lily_pad', 'minecraft:lily_pad'],
+        ['minecraft:seagrass','16x minecraft:seagrass', 'minecraft:seagrass'],
+        ['minecraft:red_mushroom','16x minecraft:red_mushroom', 'minecraft:red_mushroom'],
+        ['minecraft:wheat','16x minecraft:wheat','minecraft:wheat_seeds'],
+        ['minecraft:melon','16x minecraft:melon','minecraft:melon_seeds'],
+        ['minecraft:beetroot','16x minecraft:beetroot','minecraft:beetroot_seeds'],
+        ['minecraft:pumpkin','16x minecraft:pumpkin','minecraft:pumpkin_seeds'],
+        ['minecraft:chorus_fruit',['16x minecraft:chorus_fruit','4x minecraft:chorus_flower'],'minecraft:chorus_flower']
+    ]) {GreenhouseRecipe(plant[0],plant[1],plant[2],'minecraft:water 1000',400,64);};
 });
