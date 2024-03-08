@@ -1,4 +1,5 @@
 {
     "material.gtceu.magic_metal": "Magic Metal",
-    "block.gtceu.greenhouse" : "Greenhouse Controller"
+    "block.gtceu.greenhouse" : "Greenhouse Controller",
+    "material.gtceu.sky_alloy": "Sky alloy"
 }

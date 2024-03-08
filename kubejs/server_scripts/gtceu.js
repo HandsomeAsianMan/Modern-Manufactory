@@ -4,6 +4,12 @@ ServerEvents.recipes(event => {
     //wrought iron
     event.smelting('gtceu:wrought_iron_ingot','minecraft:iron_ingot');
 
+    //sky alloy
+    event.recipes.gtceu.alloy_smelter('gtceu:sky_alloy')
+        .itemInputs('1x minecraft:iron_ingot', '2x ae2:sky_dust')
+        .itemOutputs('1x gtceu:sky_alloy_ingot')
+        .duration(200)
+        .EUt(1924);
 
     //greenhouse controller recipe
     event.shaped('gtceu:greenhouse',

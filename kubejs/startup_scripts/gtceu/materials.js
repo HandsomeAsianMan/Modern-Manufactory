@@ -12,6 +12,7 @@ GTCEuStartupEvents.registry('gtceu:element', event => {
 
 //Materials
 GTCEuStartupEvents.registry('gtceu:material', event => {
+    //magic metal
     event.create('magic_metal')
     .ingot()
     .iconSet(GTMaterialIconSet.BRIGHT)
@@ -20,4 +21,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     .element(GTElements.get('arcankanium'))
     .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FINE_WIRE)
     .cableProperties(GTValues.V[GTValues.UEV],32,0,true);
+
+    //skystone alloy
+    event.create('sky_alloy')
+    .ingot()
+    .iconSet(GTMaterialIconSet.DULL)
+    .color('0x383838')
+    .secondaryColor('0x6ae4fc')
+    .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FINE_WIRE)
+    .cableProperties(GTValues.V[GTValues.IV],2,1,false);
 });

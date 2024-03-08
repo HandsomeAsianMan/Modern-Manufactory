@@ -4,7 +4,16 @@ ServerEvents.recipes(event => {
     //Recipe ID
     const recipes_id = [
         //gtceu
-        'gtceu:smelting/wrought_iron_nugget'
+        'gtceu:smelting/wrought_iron_nugget',
+
+        //ae2
+        'ae2:network/cells/item_storage_components_cell_1k_part',
+        'ae2:network/cells/item_storage_components_cell_4k_part',
+        'ae2:network/cells/item_storage_components_cell_16k_part',
+        'ae2:network/cells/item_storage_components_cell_64k_part',
+        'ae2:network/cells/item_storage_components_cell_256k_part',
+        'ae2:network/blocks/interfaces_interface',
+        'ae2:network/blocks/pattern_providers_interface'
     ];
 
 
@@ -25,6 +34,7 @@ ServerEvents.recipes(event => {
 
     ];
 
+    
     //Removals
     for (let recipe of recipes_id) event.remove({id: recipe});
     for (let recipe of recipes_mod) event.remove({mod: recipe});
