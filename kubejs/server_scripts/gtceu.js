@@ -4,12 +4,19 @@ ServerEvents.recipes(event => {
     //wrought iron
     event.smelting('gtceu:wrought_iron_ingot','minecraft:iron_ingot');
 
-    //sky alloy
-    event.recipes.gtceu.alloy_smelter('gtceu:sky_alloy')
-        .itemInputs('1x minecraft:iron_ingot', '2x ae2:sky_dust')
-        .itemOutputs('1x gtceu:sky_alloy_ingot')
+    //sky alloy dust
+    event.recipes.gtceu.mixer('gtceu:sky_alloy_dust')
+        .itemInputs('5x gtceu:fluix_silicon_mix_dust', '2x ae2:sky_dust', '3x gtceu:steel_dust')
+        .itemOutputs('10x gtceu:sky_alloy_dust')
         .duration(200)
-        .EUt(1924);
+        .EUt(812);
+
+    //fluix silicon mix
+    event.recipes.gtceu.mixer('gtceu:fluix_silicon_mix')
+        .itemInputs('11x gtceu:silicon_dust','4x ae2:fluix_dust')
+        .itemOutputs('15x gtceu:fluix_silicon_mix_dust')
+        .duration(1800)
+        .EUt(24)
 
     //greenhouse controller recipe
     event.shaped('gtceu:greenhouse',
