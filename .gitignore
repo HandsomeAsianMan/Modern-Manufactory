@@ -1,16 +1,19 @@
 /*
 
-!/config
 !/defaultconfigs
 !/kubejs
 !/.gitignore
 !/manifest.json
 
-/config/fml.toml
-/kubejs/probe
-config/forge-client.toml
-config/ae2/client.json
-config/ftbbackups2.json
-config/embeddium-fingerprint.json
-config/oculus.properties
-config/xaerominimap_entities.json
+!/config/ae2/common.json
+!/config/apothesis
+!/config/ftbquests
+!/config/attributefix.json
+!/config/attributeslib.cfg
+!/config/buildinggadgets2-common.toml
+!/config/clienttweaks-common.toml
+!/config/effortlessbuilding-common.toml
+!/config/expatternprovider-cmmon.toml
+!/config/farmersdelight-common.toml
+!/config/gtceu.yaml
+!/config/merequester-common.toml
