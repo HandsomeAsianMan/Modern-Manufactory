@@ -5,15 +5,15 @@
 !/.gitignore
 !/manifest.json
 
-!/config/ae2/common.json
-!/config/apothesis
-!/config/ftbquests
-!/config/attributefix.json
-!/config/attributeslib.cfg
-!/config/buildinggadgets2-common.toml
-!/config/clienttweaks-common.toml
-!/config/effortlessbuilding-common.toml
-!/config/expatternprovider-cmmon.toml
-!/config/farmersdelight-common.toml
-!/config/gtceu.yaml
-!/config/merequester-common.toml
+!config/ae2/common.json
+!config/apothesis
+!config/ftbquests
+!config/attributefix.json
+!config/attributeslib.cfg
+!config/buildinggadgets2-common.toml
+!config/clienttweaks-common.toml
+!config/effortlessbuilding-common.toml
+!config/expatternprovider-cmmon.toml
+!config/farmersdelight-common.toml
+!config/gtceu.yaml
+!config/merequester-common.toml
