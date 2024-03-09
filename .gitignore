@@ -6,7 +6,7 @@
 !/manifest.json
 
 !*/config/ae2/common.json
-!*/config/apothesis
+!*/config/apothesis*
 !*/config/ftbquests
 !*/config/attributefix.json
 !*/config/attributeslib.cfg
