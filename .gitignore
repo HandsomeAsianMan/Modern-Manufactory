@@ -27,6 +27,7 @@
 /config/fml.toml
 /config/forge-client.toml
 /config/ftbbackups2.json
+/config/flywheel-client.toml
 /config/ftbxmodcompat.snbt
 /config/inventorysorter-client.toml
 /config/ironfurnaces-client.toml
