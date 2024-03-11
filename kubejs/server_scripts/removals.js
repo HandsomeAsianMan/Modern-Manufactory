@@ -47,11 +47,29 @@ ServerEvents.recipes(event => {
         'ae2:network/blocks/energy_vibration_chamber',
         'ae2:network/blocks/crystal_processing_growth_accelerator',
         'ae2:network/cables/glass_fluix',
+        'ae2:network/blocks/storage_drive',
+        'ae2:network/blocks/storage_chest',
+        'ae2:network/crafting/patterns_blank',
+        'ae2:network/blocks/quantum_ring',
+        'ae2:network/blocks/quantum_link',
+        'ae2:network/blocks/io_port',
+        'ae2:misc/tank_sky_stone',
+        'ae2:network/blocks/spatial_io_port',
+        'ae2:network/parts/storage_bus',
+        'ae2:materials/advancedcard',
+        'ae2:materials/basiccard',
+        'ae2:network/wireless_booster',
+        'ae2:tools/network_memory_card',
+        'ae2:network/blocks/cell_workbench',
+        'ae2:network/blocks/crystal_processing_charger',
+        'ae2:network/blocks/spatial_anchor',
+        'ae2:network/blocks/crank',
 
         //Extended ae2
         'expatternprovider:wireless_connector',
         'expatternprovider:wireless_tool',
-        'expatternprovider:ex_molecular_assembler'
+        'expatternprovider:ex_molecular_assembler',
+        'expatternprovider:ex_inscriber'
 
     ];
 

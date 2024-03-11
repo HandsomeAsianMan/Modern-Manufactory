@@ -355,4 +355,166 @@ ServerEvents.recipes(event => {
         .itemOutputs('4x ae2:fluix_glass_cable')
         .duration(100)
         .EUt(24);
+
+
+    //ae2 drive
+    event.shaped('ae2:drive',[
+        'PEP',
+        'FCF',
+        'PEP'
+    ],{
+        P: 'gtceu:steel_plate',
+        E: 'ae2:engineering_processor',
+        F: '#ae2:glass_cable',
+        C: 'gtceu:steel_crate'
+    });
+
+
+    //ae2 chest
+    event.shaped('ae2:chest',[
+        'GTG',
+        'FWF',
+        'PPP'
+    ],{
+        G: 'ae2:quartz_glass',
+        T: 'ae2:terminal',
+        F: '#ae2:glass_cable',
+        W: 'gtceu:fine_copper_wire',
+        P: 'gtceu:steel_plate'
+    });
+
+
+    //blank pattern
+    event.shaped('8x ae2:blank_pattern',[
+        'SGS',
+        'WLW',
+        'PCP'
+    ],{
+        S: 'gtceu:polyethylene_foil',
+        G: 'ae2:quartz_vibrant_glass',
+        W: 'gtceu:fine_gold_wire',
+        L: '#gtceu:circuits/lv',
+        P: 'gtceu:steel_plate',
+        C: 'ae2:calculation_processor'
+    });
+
+
+    //quantum ring
+    event.shaped('ae2:quantum_ring',[
+        'PLP',
+        'ECF',
+        'PLP'
+    ],{
+        P: 'gtceu:sky_alloy_plate',
+        L: 'ae2:logic_processor',
+        E: 'ae2:engineering_processor',
+        C: 'ae2:energy_cell',
+        F: '#ae2:glass_cable'
+    });
+
+
+    //quantum link chamber
+    event.shaped('ae2:quantum_link',[
+        'PGP',
+        'GCG',
+        'PGP'
+    ],{
+        P: 'ae2:fluix_pearl',
+        G: 'ae2:quartz_vibrant_glass',
+        C: '#gtceu:circuits/ev'
+    });
+
+
+    //me io port
+    event.shaped('ae2:io_port',[
+        'GGG',
+        'DFD',
+        'PLP',
+    ],{
+        G: 'ae2:quartz_glass',
+        D: 'ae2:drive',
+        F: '#ae2:glass_cable',
+        P: 'gtceu:steel_plate',
+        L: 'ae2:logic_processor'
+    });
+
+
+    //storage bus
+    event.shapeless('ae2:storage_bus',[
+        '#ae2:interface',
+        '#gtceu:circuits/lv'
+    ]);
+
+
+    //basic card
+    event.shapeless('2x ae2:basic_card',[
+        'ae2:logic_processor',
+        'ae2:calculation_processor',
+        'gtceu:steel_plate',
+        'gtceu:fine_gold_wire'
+    ]);
+
+
+    //advanced card
+    event.shapeless('2x ae2:advanced_card',[
+        'ae2:engineering_processor',
+        'ae2:calculation_processor',
+        'gtceu:steel_plate',
+        'gtceu:fine_platinum_wire'
+    ]);
+
+
+    //wireless booster
+    event.shapeless('4x ae2:wireless_booster',[
+        'ae2:fluix_dust',
+        '#forge:gems/certus_quartz',
+        'gtceu:steel_plate'
+    ]);
+
+
+    //memory card
+    event.shapeless('ae2:memory_card',[
+        'ae2:calculation_processor',
+        'gtceu:steel_plate',
+        'gtceu:fine_gold_wire'
+    ]);
+
+
+    //cell workbench
+    event.shaped('ae2:cell_workbench',[
+        'QCQ',
+        'WXW',
+        'PPP'
+    ],{
+        Q: '#forge:gems/certus_quartz',
+        C: 'ae2:calculation_processor',
+        W: 'gtceu:fine_copper_wire',
+        X: 'minecraft:chest',
+        P: 'gtceu:steel_plate'
+    });
+
+
+    //charger
+    event.shaped('ae2:charger',[
+        'SCS',
+        'SW ',
+        'SCS'
+    ],{
+        S: 'gtceu:steel_plate',
+        C: 'gtceu:copper_plate',
+        W: 'gtceu:fine_copper_wire'
+    });
+
+
+    //spatial io port
+    event.shaped('ae2:spatial_io_port',[
+        'PSP',
+        'FEF',
+        'PSP'
+    ],{
+        P: 'gtceu:steel_plate',
+        S: 'ae2:spatial_pylon',
+        F: '#ae2:glass_cable',
+        E: 'ae2:engineering_processor'
+    });
 });
