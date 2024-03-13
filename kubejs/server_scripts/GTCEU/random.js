@@ -1,10 +1,6 @@
 // priority: 0
 ServerEvents.recipes(event => {
 
-    //wrought iron
-    event.smelting('gtceu:wrought_iron_ingot','minecraft:iron_ingot');
-
-
     //sky alloy dust
     event.recipes.gtceu.mixer('gtceu:sky_alloy_dust')
         .itemInputs('5x gtceu:fluix_silicon_mix_dust', '2x ae2:sky_dust', '3x gtceu:steel_dust')

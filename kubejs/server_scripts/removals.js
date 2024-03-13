@@ -69,7 +69,12 @@ ServerEvents.recipes(event => {
         'expatternprovider:wireless_connector',
         'expatternprovider:wireless_tool',
         'expatternprovider:ex_molecular_assembler',
-        'expatternprovider:ex_inscriber'
+        'expatternprovider:ex_inscriber',
+
+        //gtceu
+        'gtceu:compressor/compressed_fireclay',
+        'gtceu:smelting/fireclay_brick',
+        'gtceu:shapeless/fireclay_dust'
 
     ];
 
@@ -83,7 +88,8 @@ ServerEvents.recipes(event => {
 
     //Recipe_type
     const recipes_type = [
-        'ae2:inscriber'
+        'ae2:inscriber',
+        'gtceu:primitive_blast_furnace'
     ];
 
 
@@ -110,7 +116,7 @@ ServerEvents.recipes(event => {
     //multicondition removals
     event.remove({
         mod:'megacells',
-        not: [{input:'megacells:mega_item_cell_housing'},
+        not:[{input:'megacells:mega_item_cell_housing'},
             {input:'megacells:mega_fluid_cell_housing'},
             {input:'megacells:mega_crafting_unit'}]
     });
