@@ -85,6 +85,44 @@
 			x: -1.5d
 			y: -1.5d
 		}
+		{
+			dependencies: ["01764405141A15CB"]
+			description: ["Waystones can be found generated around the world or crafted using warpstones which are quite expensive and more wont be avaliable until EV. &cDONT USE YOUR ONLY WARPSTONE TO CRAFT ANOTHER WAYSTONE. THESE ARE PORTABLE AND CAN BE USED IN YOUR HOTBAR TO TELEPORT TO ALL WAYSTONES"]
+			icon: {
+				Count: 1b
+				id: "waystones:warp_stone"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "25E4631418897934"
+			rewards: [
+				{
+					id: "1E4CE34646A295E0"
+					item: {
+						Count: 1b
+						id: "waystones:warp_stone"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "352EF66D6FB1C6E3"
+					item: "waystones:waystone"
+					type: "item"
+				}
+			]
+			subtitle: "&dTeleportation"
+			tasks: [{
+				id: "46763AF589FAD0A9"
+				type: "checkmark"
+			}]
+			title: "&dWarpstones and waystones"
+			x: 0.0d
+			y: -1.5d
+		}
 	]
 	title: "Chapter: 1"
 }
