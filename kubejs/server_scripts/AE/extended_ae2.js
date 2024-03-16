@@ -38,4 +38,9 @@ ServerEvents.recipes(event => {
         E: 'ae2:engineering_processor',
         M: 'ae2:molecular_assembler'
     });
+
+
+    //Infinite Cobble/Water cell
+    event.replaceInput({ output: Item.of('expatternprovider:infinity_cell', '{record:{"#c":"ae2:f",id:"minecraft:water"}}') }, 'minecraft:water_bucket', 'gtceu:infinite_water_cover'); //water
+    event.replaceInput({ output: Item.of('expatternprovider:infinity_cell', '{record:{"#c":"ae2:f",id:"minecraft:water"}}') }, 'minecraft:diamond', 'gtceu:hv_rock_crusher'); //cobble
 });
