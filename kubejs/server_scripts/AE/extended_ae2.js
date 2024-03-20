@@ -42,5 +42,5 @@ ServerEvents.recipes(event => {
 
     //Infinite Cobble/Water cell
     event.replaceInput({ output: Item.of('expatternprovider:infinity_cell', '{record:{"#c":"ae2:f",id:"minecraft:water"}}') }, 'minecraft:water_bucket', 'gtceu:infinite_water_cover'); //water
-    event.replaceInput({ output: Item.of('expatternprovider:infinity_cell', '{record:{"#c":"ae2:f",id:"minecraft:water"}}') }, 'minecraft:diamond', 'gtceu:hv_rock_crusher'); //cobble
+    event.replaceInput({ output: Item.of('expatternprovider:infinity_cell', '{record:{"#c":"ae2:f",id:"minecraft:water"}}') }, 'minecraft:lava_bucket', 'gtceu:hv_rock_crusher'); //cobble
 });

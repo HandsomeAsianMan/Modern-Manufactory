@@ -73,8 +73,7 @@ ServerEvents.recipes(event => {
 
         //gtceu
         'gtceu:compressor/compressed_fireclay',
-        'gtceu:smelting/fireclay_brick',
-        'gtceu:shapeless/fireclay_dust'
+        'gtceu:smelting/fireclay_brick'
 
     ];
 
@@ -112,7 +111,6 @@ ServerEvents.recipes(event => {
     for (let recipe of recipes_output) event.remove({output: recipe});
     for (let recipe of recipes_input) event.remove({input: recipe});
 
-    // not:{input:'megacells:mega_fluid_cell_housing'}
     //multicondition removals
     event.remove({
         mod:'megacells',
