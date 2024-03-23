@@ -73,11 +73,11 @@ ServerEvents.recipes(event => {
 
         //gtceu
         'gtceu:compressor/compressed_fireclay',
-        'gtceu:smelting/fireclay_brick'
+        'gtceu:smelting/fireclay_brick',
+        'gtceu:autoclave/silicon_dioxide_to_quartzite_gem'
 
     ];
-
-    //expatternprovider:water_cell
+    
 
     //Mod
     const recipes_mod = [

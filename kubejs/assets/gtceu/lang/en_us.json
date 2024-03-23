@@ -3,5 +3,7 @@
     "material.gtceu.sky_alloy": "Sky alloy",
     "material.gtceu.fluix_silicon_mix": "Fluix Silicon mix",
     "block.gtceu.greenhouse" : "Greenhouse Controller",
-    "block.gtceu.crystal_fabricator" : "Crystal Fabricator Controller"
+    "gtceu.greenhouse" : "Greenhouse",
+    "block.gtceu.crystal_fabricator" : "Crystal Fabricator Controller",
+    "gtceu.crystal_fabricator" : "Crystal Fabricator"
 }
