@@ -74,7 +74,8 @@ ServerEvents.recipes(event => {
         //gtceu
         'gtceu:compressor/compressed_fireclay',
         'gtceu:smelting/fireclay_brick',
-        'gtceu:autoclave/silicon_dioxide_to_quartzite_gem'
+        'gtceu:autoclave/silicon_dioxide_to_quartzite_gem',
+        'gtceu:mixer/mud'
 
     ];
     
@@ -94,7 +95,7 @@ ServerEvents.recipes(event => {
 
     //Output
     const recipes_output = [
-
+        'gtceu:resin_circuit_board'
     ];
 
 

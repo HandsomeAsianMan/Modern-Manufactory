@@ -102,4 +102,37 @@ ServerEvents.recipes(event => {
         .EUt(24)
         .duration(600);
 
+
+    //mud
+    event.recipes.gtceu.chemical_reactor('minecraft:mud')
+        .itemInputs('minecraft:dirt')
+        .inputFluids('minecraft:water 500')
+        .itemOutputs('minecraft:mud')
+        .EUt(8)
+        .duration(60);
+
+
+    //clay
+    event.recipes.gtceu.mixer('minecraft:clay')
+        .itemInputs('minecraft:mud','minecraft:sand')
+        .itemOutputs('2x minecraft:clay')
+        .inputFluids('minecraft:water 500')
+        .EUt(12)
+        .duration(60)
+
+
+    //resin board
+    event.shapeless('gtceu:resin_circuit_board',['#minecraft:wooden_slabs','2x gtceu:sticky_resin']);
+    event.shaped('3x gtceu:resin_circuit_board',[
+        'RRR',
+        'SSS',
+        'RRR'
+    ],{
+        R: 'gtceu:sticky_resin',
+        S: '#minecraft:wooden_slabs'
+    });
+
+
+    //red alloy dust
+    event.shapeless('gtceu:red_alloy_dust',['gtceu:copper_dust','4x minecraft:redstone']);
 });
