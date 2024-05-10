@@ -8,26 +8,6 @@ ServerEvents.recipes(event => {
         'gtceu:smelting/wrought_iron_nugget',
 
         //ae2
-        'ae2:network/cells/item_storage_components_cell_1k_part',
-        'ae2:network/cells/item_storage_components_cell_4k_part',
-        'ae2:network/cells/item_storage_components_cell_16k_part',
-        'ae2:network/cells/item_storage_components_cell_64k_part',
-        'ae2:network/cells/item_storage_components_cell_256k_part',
-        'ae2:network/cells/item_storage_cell_1k',
-        'ae2:network/cells/item_storage_cell_4k',
-        'ae2:network/cells/item_storage_cell_16k',
-        'ae2:network/cells/item_storage_cell_64k',
-        'ae2:network/cells/item_storage_cell_256k',
-        'ae2:network/cells/fluid_storage_cell_1k',
-        'ae2:network/cells/fluid_storage_cell_4k',
-        'ae2:network/cells/fluid_storage_cell_16k',
-        'ae2:network/cells/fluid_storage_cell_64k',
-        'ae2:network/cells/fluid_storage_cell_256k',
-        'ae2:network/cells/spatial_storage_cell_2_cubed',
-        'ae2:network/cells/spatial_storage_cell_16_cubed',
-        'ae2:network/cells/spatial_storage_cell_128_cubed',
-        'ae2:network/cells/item_cell_housing',
-        'ae2:network/cells/fluid_cell_housing',
         'ae2:network/blocks/interfaces_interface',
         'ae2:network/blocks/pattern_providers_interface',
         'ae2:materials/annihilationcore',
@@ -40,7 +20,6 @@ ServerEvents.recipes(event => {
         'ae2:network/crafting/molecular_assembler',
         'ae2:network/parts/panels_semi_dark_monitor',
         'ae2:network/parts/level_emitter',
-        'ae2:network/cells/view_cell',
         'ae2:network/crafting/cpu_crafting_unit',
         'ae2:network/blocks/controller',
         'ae2:network/blocks/energy_energy_acceptor',
@@ -64,6 +43,14 @@ ServerEvents.recipes(event => {
         'ae2:network/blocks/crystal_processing_charger',
         'ae2:network/blocks/spatial_anchor',
         'ae2:network/blocks/crank',
+        'ae2:network/blocks/energy_energy_cell',
+        'ae2:network/blocks/energy_dense_energy_cell',
+        'ae2:network/parts/energy_level_emitter',
+        'ae2:network/crystal_resonance_generator',
+        'ae2:network/parts/import_bus',
+        'ae2:network/parts/export_bus',
+        'ae2:network/parts/tunnels_me',
+        '/ae2:network\/parts\/.*_plane.*/',
 
         //Extended ae2
         'expatternprovider:wireless_connector',
@@ -119,4 +106,7 @@ ServerEvents.recipes(event => {
             {input:'megacells:mega_fluid_cell_housing'},
             {input:'megacells:mega_crafting_unit'}]
     });
+    
+    //ae2 cells
+    event.remove({id: '/ae2:network\/cells\/(?!.*storage$).*/'});
 });

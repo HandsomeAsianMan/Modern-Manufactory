@@ -32,22 +32,6 @@ ServerEvents.recipes(event => {
     });
 
 
-    //certus using fabricator
-    event.recipes.gtceu.crystal_fabricator('ae2:certus_quartz_crystal')
-        .notConsumable('ae2:certus_quartz_crystal')
-        .itemOutputs('8x ae2:certus_quartz_crystal')
-        .duration(200)
-        .EUt(112);
-    
-    
-    //fluix using fabricator
-    event.recipes.gtceu.crystal_fabricator('ae2:fluix_crystal')
-        .itemInputs('minecraft:quartz')
-        .itemOutputs('4x ae2:fluix_crystal')
-        .duration(200)
-        .EUt(812);
-
-
     //sky stone using fabricator
     event.recipes.gtceu.crystal_fabricator('ae2:sky_stone_block')
         .itemInputs('minecraft:gravel')

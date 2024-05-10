@@ -3,68 +3,64 @@
 ServerEvents.recipes(event => {
     
     //1k cell
-    event.shaped('ae2:cell_component_1k',[
-        'WCW',
-        'CLC',
-        'WCW'
-    ],{
-        W: 'gtceu:fine_copper_wire',
-        C: '#forge:gems/certus_quartz',
-        L: 'ae2:logic_processor',
-    });
-
+    event.recipes.gtceu.assembler('assembler_cell_component_1k')
+        .itemOutputs('ae2:cell_component_1k')
+        .itemInputs('ae2:logic_processor', '4x gtceu:fine_copper_wire', '4x #forge:gems/certus_quartz')
+        .duration(40)
+        .EUt(24);
 
     //4k cell
-    event.shaped('ae2:cell_component_4k',[
-        'WCW',
-        'PGP',
-        'WPW'
-    ],{
-        W: 'gtceu:fine_silver_wire',
-        C: '#gtceu:circuits/lv',
-        P: 'ae2:cell_component_1k',
-        G: 'ae2:quartz_glass'
-    });
+    event.recipes.gtceu.assembler('assembler_cell_component_4k')
+        .itemOutputs('ae2:cell_component_4k')
+        .itemInputs('ae2:cell_component_1k', '#gtceu:circuits/lv', '2x gtceu:fine_silver_wire')
+        .duration(40)
+        .EUt(30);
+
+    event.recipes.gtceu.assembler('assembler_cell_component_4k_direct')
+        .itemOutputs('ae2:cell_component_4k')
+        .itemInputs('ae2:logic_processor','2x ae2:quartz_glass', '#gtceu:circuits/lv', '4x gtceu:fine_silver_wire')
+        .duration(60)
+        .EUt(30);
 
 
     //16k cell
-    event.shaped('ae2:cell_component_16k',[
-        'WCW',
-        'PGP',
-        'WPW'
-    ],{
-        W: 'gtceu:fine_gold_wire',
-        C: '#gtceu:circuits/mv',
-        P: 'ae2:cell_component_4k',
-        G: 'ae2:quartz_glass'
-    });
+    event.recipes.gtceu.assembler('assembler_cell_component_16k')
+        .itemOutputs('ae2:cell_component_16k')
+        .itemInputs('ae2:cell_component_4k', 'ae2:quartz_glass', '#gtceu:circuits/mv', '4x gtceu:fine_gold_wire')
+        .duration(40)
+        .EUt(112);
 
+    event.recipes.gtceu.assembler('assembler_cell_component_16k_direct')
+        .itemOutputs('ae2:cell_component_16k')
+        .itemInputs('ae2:logic_processor','3x ae2:quartz_glass', '#gtceu:circuits/mv', '12x gtceu:fine_gold_wire')
+        .duration(90)
+        .EUt(112);
 
     //64k cell
-    event.shaped('ae2:cell_component_64k',[
-        'WCW',
-        'PGP',
-        'WPW'
-    ],{
-        W: 'gtceu:fine_platinum_wire',
-        C: '#gtceu:circuits/hv',
-        P: 'ae2:cell_component_16k',
-        G: 'ae2:quartz_glass'
-    });
+    event.recipes.gtceu.assembler('assembler_cell_component_64k')
+        .itemOutputs('ae2:cell_component_64k')
+        .itemInputs('ae2:cell_component_16k', 'ae2:quartz_glass', '#gtceu:circuits/hv', '4x gtceu:fine_platinum_wire')
+        .duration(40)
+        .EUt(112);
 
+    event.recipes.gtceu.assembler('assembler_cell_component_64k_direct')
+        .itemOutputs('ae2:cell_component_64k')
+        .itemInputs('ae2:logic_processor','4x ae2:quartz_glass', '#gtceu:circuits/hv', '12x gtceu:fine_platinum_wire')
+        .duration(120)
+        .EUt(112);
 
     //256k cell
-    event.shaped('ae2:cell_component_256k',[
-        'WCW',
-        'PGP',
-        'WPW'
-    ],{
-        W: 'gtceu:fine_sky_alloy_wire',
-        C: '#gtceu:circuits/ev',
-        P: 'ae2:cell_component_64k',
-        G: 'ae2:quartz_vibrant_glass'
-    });
+    event.recipes.gtceu.assembler('assembler_cell_component_256k')
+        .itemOutputs('ae2:cell_component_256k')
+        .itemInputs('ae2:cell_component_64k', 'ae2:quartz_vibrant_glass', '#gtceu:circuits/ev', '2x gtceu:fine_sky_alloy_wire')
+        .duration(40)
+        .EUt(480);
 
+    event.recipes.gtceu.assembler('assembler_cell_component_256k_direct')
+        .itemOutputs('ae2:cell_component_256k')
+        .itemInputs('ae2:logic_processor','2x ae2:quartz_vibrant_glass', '#gtceu:circuits/ev', '16x gtceu:fine_sky_alloy_wire')
+        .duration(140)
+        .EUt(480);
 
     //Item cell housing
     event.shaped('ae2:item_cell_housing',[
@@ -299,6 +295,10 @@ ServerEvents.recipes(event => {
     });
 
 
+    //me energy level emitter
+    event.shapeless('ae2:energy_level_emitter',['ae2:level_emitter']);
+    event.shapeless('ae2:level_emitter',['ae2:energy_level_emitter'])
+
     //crafting unit
     event.shaped('ae2:crafting_unit',[
         'PCP',
@@ -517,4 +517,87 @@ ServerEvents.recipes(event => {
         F: '#ae2:glass_cable',
         E: 'ae2:engineering_processor'
     });
+
+
+    //energy cell
+    event.shaped('ae2:energy_cell', [
+        'CGC',
+        'GBG',
+        'CGC'
+    ],{
+        C: '#forge:gems/certus_quartz',
+        G: 'ae2:quartz_glass',
+        B: 'gtceu:lv_lithium_battery'
+    });
+
+
+    //dense energy cell
+    event.recipes.gtceu.assembler('dense_energy_cell')
+        .itemInputs('ae2:energy_cell', '16x ae2:fluix_crystal', 'ae2:calculation_processor')
+        .itemOutputs('ae2:dense_energy_cell')
+        .duration(400)
+        .EUt(24)
+
+
+    //import bus
+    event.shaped('ae2:import_bus',[
+        ' D ',
+        'SGS',
+        'LCL'
+    ],{
+        D: 'ae2:annihilation_core',
+        S: 'gtceu:steel_plate',
+        G: 'ae2:quartz_glass',
+        L: 'gtceu:lv_electric_motor',
+        C: 'ae2:calculation_processor'
+    });
+
+
+    //export bus
+    event.shaped('ae2:export_bus',[
+        ' D ',
+        'SGS',
+        'LCL'
+    ],{
+        D: 'ae2:formation_core',
+        S: 'gtceu:steel_plate',
+        G: 'ae2:quartz_glass',
+        L: 'gtceu:lv_electric_motor',
+        C: 'ae2:calculation_processor'
+    });
+
+
+    //p2p
+    event.shaped('ae2:me_p2p_tunnel',[
+        'PCP',
+        'PEP',
+        'FFF'
+    ],{
+        P: 'gtceu:steel_plate',
+        C: '#gtceu:circuits/lv',
+        E: 'ae2:engineering_processor',
+        F: 'ae2:fluix_crystal'
+    });
+
+
+    //planes
+    event.shaped('ae2:formation_plane',['FFF','SCS'],{F: 'ae2:fluix_crystal',S: 'gtceu:steel_plate', C: 'ae2:formation_core'})
+    event.shaped('ae2:annihilation_plane',['FFF','SCS'],{F: 'ae2:fluix_crystal',S: 'gtceu:steel_plate', C: 'ae2:annihilation_core'})
+    
+
+    //certus using fabricator
+    event.recipes.gtceu.crystal_fabricator('fabricate_certus')
+        .notConsumable('#forge:gems/certus_quartz')
+        .itemOutputs('8x gtceu:certus_quartz_gem')
+        .duration(200)
+        .EUt(112);
+
+
+    //fluix using fabricator
+    event.recipes.gtceu.crystal_fabricator('fabricate_fluix')
+        .itemInputs('minecraft:quartz')
+        .itemOutputs('4x ae2:fluix_crystal')
+        .duration(200)
+        .EUt(812);
+
 });
