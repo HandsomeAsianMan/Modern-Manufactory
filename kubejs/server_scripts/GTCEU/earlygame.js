@@ -2,55 +2,21 @@
 
 //Early game is steam-lv
 ServerEvents.recipes(event => {
-
     //wrought iron
     event.smelting('gtceu:wrought_iron_ingot','minecraft:iron_ingot');
-
-
     //firebrick
     event.smelting('gtceu:firebrick','gtceu:fireclay_dust');
-
-
     //steel with PBF
-    event.recipes.gtceu.primitive_blast_furnace('gtceu:steel_ingot')
-        .itemInputs('2x gtceu:wrought_iron_ingot', ['gtceu:coke_gem','gtceu:coke_dust'])
-        .itemOutputs('2x gtceu:steel_ingot')
-        .duration(200);
+    event.recipes.gtceu.primitive_blast_furnace('gtceu:steel_ingot').itemInputs('2x gtceu:wrought_iron_ingot', ['gtceu:coke_gem','gtceu:coke_dust']).itemOutputs('2x gtceu:steel_ingot').duration(200);
     //steel block
-    event.recipes.gtceu.primitive_blast_furnace('gtceu:steel_block')
-        .itemInputs('2x gtceu:wrought_iron_block','gtceu:coke_block')
-        .itemOutputs('2x gtceu:steel_block')
-        .duration(1700);
-
-
+    event.recipes.gtceu.primitive_blast_furnace('gtceu:steel_block').itemInputs('2x gtceu:wrought_iron_block','gtceu:coke_block').itemOutputs('2x gtceu:steel_block').duration(1700);
     //rubber plate
-    event.shaped('gtceu:rubber_plate',['H','R','R'],{H: '#forge:tools/hammers',R: 'gtceu:sticky_resin'});
-
-
+    event.shapeless('9x gtceu:rubber_plate',['gtceu:rubber_block', '#forge:tools/saws']);
     //greenhouse controller recipe
-    event.shaped('gtceu:greenhouse',[
-        'PCP',
-        'WMW',
-        'PCP'
-    ],{
-        P: 'gtceu:steel_plate',
-        C: '#gtceu:circuits/lv',
-        W: 'gtceu:fine_platinum_wire',
-        M: 'gtceu:lv_machine_hull'
-    });
-
+    event.shaped('gtceu:greenhouse',['PCP','WMW','PCP'],{P: 'gtceu:steel_plate', C: '#gtceu:circuits/lv', W: 'gtceu:fine_platinum_wire', M: 'gtceu:lv_machine_hull'});
     //greenhouse function
-    function GreenhouseRecipe(recipeID, output, seed, fluid, time, eu) {
-        event.recipes.gtceu.greenhouse(recipeID)
-        .notConsumable(seed)
-        .itemOutputs(output)
-        .inputFluids(fluid)
-        .duration(time)
-        .EUt(eu);
-    };
-
+    function GreenhouseRecipe(recipeID, output, seed, fluid, time, eu) {event.recipes.gtceu.greenhouse(recipeID).notConsumable(seed).itemOutputs(output).inputFluids(fluid).duration(time).EUt(eu);};
     //Array of plants grown with typical greenhouse recipe
-    //['minecraft:template','16x minecraft:template','minecraft:template_seeds'],
     for (let plant of 
     [
         ['minecraft:potato','16x minecraft:potato', 'minecraft:potato'],
@@ -91,48 +57,20 @@ ServerEvents.recipes(event => {
         ['farmersdelight:onion','16x farmersdelight:onion','farmersdelight:onion'],
         ['farmersdelight:cabbage','16x farmersdelight:cabbage','farmersdelight:cabbage_seeds']
     ]) {GreenhouseRecipe(plant[0],plant[1],plant[2],'minecraft:water 1000',600,16);};
-
-
     //quartz from silicon dioxide
-    event.recipes.gtceu.autoclave('gtceu:autoclave/silicon_dioxide_to_quartzite_and_quartz_gem')
-        .itemInputs('gtceu:silicon_dioxide_dust')
-        .inputFluids('gtceu:distilled_water 250')
-        .chancedOutput('gtceu:quartzite_gem',1000,1000)
-        .chancedOutput('minecraft:quartz',1000,1000)
-        .EUt(24)
-        .duration(600);
-
-
+    event.recipes.gtceu.autoclave('gtceu:autoclave/silicon_dioxide_to_quartzite_and_quartz_gem').itemInputs('gtceu:silicon_dioxide_dust').inputFluids('gtceu:distilled_water 250').chancedOutput('gtceu:quartzite_gem',1000,1000).chancedOutput('minecraft:quartz',1000,1000).EUt(24).duration(600);
     //mud
-    event.recipes.gtceu.chemical_reactor('minecraft:mud')
-        .itemInputs('minecraft:dirt')
-        .inputFluids('minecraft:water 500')
-        .itemOutputs('minecraft:mud')
-        .EUt(8)
-        .duration(60);
-
-
+    event.recipes.gtceu.chemical_reactor('minecraft:mud').itemInputs('minecraft:dirt').inputFluids('minecraft:water 500').itemOutputs('minecraft:mud').EUt(8).duration(60);
     //clay
-    event.recipes.gtceu.mixer('minecraft:clay')
-        .itemInputs('minecraft:mud','minecraft:sand')
-        .itemOutputs('2x minecraft:clay')
-        .inputFluids('minecraft:water 500')
-        .EUt(12)
-        .duration(60)
-
-
+    event.recipes.gtceu.mixer('minecraft:clay').itemInputs('minecraft:mud','minecraft:sand').itemOutputs('2x minecraft:clay').inputFluids('minecraft:water 500').EUt(12).duration(60)
     //resin board
     event.shapeless('gtceu:resin_circuit_board',['#minecraft:wooden_slabs','2x gtceu:sticky_resin']);
-    event.shaped('3x gtceu:resin_circuit_board',[
-        'RRR',
-        'SSS',
-        'RRR'
-    ],{
-        R: 'gtceu:sticky_resin',
-        S: '#minecraft:wooden_slabs'
-    });
-
-
-    //red alloy dust
-    event.shapeless('gtceu:red_alloy_dust',['gtceu:copper_dust','4x minecraft:redstone']);
+    event.shaped('3x gtceu:resin_circuit_board',['RRR','SSS','RRR'],{R: 'gtceu:sticky_resin',S: '#minecraft:wooden_slabs'});
+    //smelt redstone
+    event.smelting('3x minecraft:redstone', 'gtceu:raw_redstone', 0.7)
+    event.blasting('3x minecraft:redstone', 'gtceu:raw_redstone', 0.9)
+    //damascus
+    event.recipes.gtceu.forge_hammer('steel_foil_to_damascus').itemOutputs('gtceu:damascus_steel_ingot').itemInputs('6x gtceu:steel_foil').EUt(24).duration(300);
+    //netherite maceration
+    event.recipes.gtceu.macerator('ancient_debris_macerate').itemOutputs('2x minecraft:netherite_scrap').chancedOutput('minecraft:netherite_scrap',1250,150).chancedOutput('minecraft:netherite_scrap',500,100).chancedOutput('gtceu:iridium_dust',50,150).itemInputs('minecraft:ancient_debris').EUt(8).duration(400);
 });

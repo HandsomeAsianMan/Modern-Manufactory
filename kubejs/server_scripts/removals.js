@@ -47,10 +47,10 @@ ServerEvents.recipes(event => {
         'ae2:network/blocks/energy_dense_energy_cell',
         'ae2:network/parts/energy_level_emitter',
         'ae2:network/crystal_resonance_generator',
-        'ae2:network/parts/import_bus',
-        'ae2:network/parts/export_bus',
+        '/ae2:network\/parts\/......_bus/',
         'ae2:network/parts/tunnels_me',
         '/ae2:network\/parts\/.*_plane.*/',
+        '/ae2:network\/cells\/(?!.*storage$).*/',
 
         //Extended ae2
         'expatternprovider:wireless_connector',
@@ -62,7 +62,11 @@ ServerEvents.recipes(event => {
         'gtceu:compressor/compressed_fireclay',
         'gtceu:smelting/fireclay_brick',
         'gtceu:autoclave/silicon_dioxide_to_quartzite_gem',
-        'gtceu:mixer/mud'
+        'gtceu:mixer/mud',
+        '/gtceu:....ting\/smelt_raw_redstone_ore_to_ingot/',
+
+        //random shit
+        'tempad:tempad'
 
     ];
     
@@ -106,7 +110,4 @@ ServerEvents.recipes(event => {
             {input:'megacells:mega_fluid_cell_housing'},
             {input:'megacells:mega_crafting_unit'}]
     });
-    
-    //ae2 cells
-    event.remove({id: '/ae2:network\/cells\/(?!.*storage$).*/'});
 });
