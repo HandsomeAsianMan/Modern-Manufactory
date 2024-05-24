@@ -5,7 +5,6 @@
 !/kubejs/**
 !.gitignore
 
-!/config/**
 !/config/curios-common.toml
 !/config/effortlessbuilding-common.toml
 !/config/expatternprovider-common.toml
