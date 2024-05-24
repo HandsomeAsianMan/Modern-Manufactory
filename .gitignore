@@ -1,15 +1,16 @@
-/*
+*
 
-!/defaultconfigs
-!/kubejs
-!/.gitignore
-!/manifest.json
+!defualtconfigs/*
+!kubejs/*
 
-!/config/curios-common.toml
-!/config/effortlessbuilding-common.toml
-!/config/expatternprovider-common.toml
-!/config/farmersdelight-common.toml
-!/config/gtceu.yaml
-!/config/apotheosis
-!/config/ae2/common.json
-!/config/ftbquests/quests
+!config/ae2
+config/ae2/*
+!config/ae2/common.json
+!config/apotheosis
+!config/ftbquests
+!config/curios-common.toml
+!config/effortlessbuilding-common.toml
+!config/expatternprovider-common.toml
+!config/farmersdelight-common.toml
+!config/gtceu.yaml
+!config/merequester-common.toml
