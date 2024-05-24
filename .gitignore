@@ -1,5 +1,12 @@
-*
-
-!.gitignore
-!kubejs/
-!kubejs/*
+config/*
+!config/ae2
+!config/apotheosis
+!config/ftbquests
+!config/curios-common.toml
+!config/effortlessbuilding-common.toml
+!config/expatternprovider-common.toml
+!config/farmersdelight-common.toml
+!config/gtceu.yaml
+!config/merequester-common.toml
+config/ae2/*
+!config/ae2/common.json
