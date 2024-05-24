@@ -5,7 +5,7 @@ ServerEvents.recipes(event => {
     //1k cell
     event.recipes.gtceu.assembler('assembler_cell_component_1k')
         .itemOutputs('ae2:cell_component_1k')
-        .itemInputs('ae2:logic_processor', '4x gtceu:fine_copper_wire', '4x #forge:gems/certus_quartz')
+        .itemInputs('ae2:logic_processor', '#gtceu:circuits/ulv', '4x gtceu:fine_copper_wire', '4x #forge:gems/certus_quartz')
         .duration(40)
         .EUt(24);
 
@@ -62,6 +62,7 @@ ServerEvents.recipes(event => {
         .duration(140)
         .EUt(480);
 
+
     //Item cell housing
     event.shaped('ae2:item_cell_housing',[
         'SGS',
@@ -71,6 +72,18 @@ ServerEvents.recipes(event => {
         S: 'gtceu:polyethylene_foil',
         G: 'ae2:quartz_glass',
         W: 'gtceu:fine_silver_wire',
+        P: 'gtceu:steel_plate'
+    });
+
+    //Item cell housing alt
+    event.shaped('ae2:item_cell_housing',[
+        'SGS',
+        'W W',
+        'PPP'
+    ],{
+        S: 'gtceu:rubber_plate',
+        G: 'ae2:quartz_glass',
+        W: 'gtceu:silver_single_wire',
         P: 'gtceu:steel_plate'
     });
 
@@ -84,6 +97,18 @@ ServerEvents.recipes(event => {
         S: 'gtceu:polyethylene_foil',
         G: 'ae2:quartz_glass',
         W: 'gtceu:fine_silver_wire',
+        P: 'gtceu:copper_plate'
+    });
+
+    //Fluid cell housing alt
+    event.shaped('ae2:fluid_cell_housing',[
+        'SGS',
+        'W W',
+        'PPP'
+    ],{
+        S: 'gtceu:rubber_plate',
+        G: 'ae2:quartz_glass',
+        W: 'gtceu:silver_single_wire',
         P: 'gtceu:copper_plate'
     });
 

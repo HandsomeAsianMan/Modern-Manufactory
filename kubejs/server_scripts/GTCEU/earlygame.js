@@ -72,5 +72,7 @@ ServerEvents.recipes(event => {
     //damascus
     event.recipes.gtceu.forge_hammer('steel_foil_to_damascus').itemOutputs('gtceu:damascus_steel_ingot').itemInputs('6x gtceu:steel_foil').EUt(24).duration(300);
     //netherite maceration
-    event.recipes.gtceu.macerator('ancient_debris_macerate').itemOutputs('2x minecraft:netherite_scrap').chancedOutput('minecraft:netherite_scrap',1250,150).chancedOutput('minecraft:netherite_scrap',500,100).chancedOutput('gtceu:iridium_dust',50,150).itemInputs('minecraft:ancient_debris').EUt(8).duration(400);
+    event.recipes.gtceu.macerator('ancient_debris_macerate').itemOutputs('2x minecraft:netherite_scrap').chancedOutput('minecraft:netherite_scrap',1250,150).chancedOutput('minecraft:netherite_scrap',500,100).chancedOutput('gtceu:iridium_dust',50,150).itemInputs('minecraft:ancient_debris').EUt(2).duration(400);
+    //Echo shard
+    event.recipes.gtceu.alloy_smelter('alloy_smelter_echo_shard').itemOutputs('minecraft:echo_shard').itemInputs('4x minecraft:amethyst_shard', 'apotheosis:warden_tendril').EUt(30).duration(400);
 });
