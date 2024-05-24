@@ -2,6 +2,7 @@
 
 !defualtconfigs/*
 !kubejs/*
+!config/
 
 !config/ae2
 config/ae2/*
